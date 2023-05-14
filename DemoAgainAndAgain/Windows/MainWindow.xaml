@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="Вход" MinHeight="450" MinWidth="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Войти как клиент" Name="clientButton" Grid.Row="0" Click="clientButton_Click"/>
+        <Button Content="Я админ!" Grid.Row="1" Name="adminButton" Click="adminButton_Click"/>
+        <Label Content="Код" Visibility="Hidden" Grid.Row="2" Name="codeLabel"/>
+        <TextBox Name="codeTextBox" Grid.Row="3" Visibility="Hidden"/>
+        <Button Name="enterButton" Grid.Row="4" Visibility="Hidden" Click="enterButton_Click"/>
     </Grid>
 </Window>
