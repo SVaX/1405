@@ -19,9 +19,27 @@ namespace DemoAgainAndAgain.Windows
     /// </summary>
     public partial class ClientServiceWindow : Window
     {
+        NewDemoDbAgainContext db = new NewDemoDbAgainContext();
         public ClientServiceWindow()
         {
             InitializeComponent();
+            List<ClientService> services = db.ClientServices.Where(x => x.Start <= DateTime.Now.AddDays(1)).ToList();
+            serviceList.Items.Clear();
+            serviceList.ItemsSource = services;
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new ServicesWindow(true);
+            window.Show();
+            this.Close();
+        }
+
+        private void addButton_Click(object sender, RoutedEventArgs e)
+        {
+            var window = new AddClientServiceWindow();
+            window.Show();
+            this.Close();
         }
     }
 }

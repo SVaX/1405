@@ -130,7 +130,7 @@ namespace DemoAgainAndAgain.Windows
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            var admin = new ServicesWindow();
+            var admin = new ServicesWindow(true);
             admin.Show();
             Close();
         }

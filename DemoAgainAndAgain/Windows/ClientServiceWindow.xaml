@@ -4,9 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoAgainAndAgain.Windows"
+        xmlns:converter="clr-namespace:DemoAgainAndAgain.Models;assembly="
         mc:Ignorable="d"
         Title="Записи" MinHeight="450" MinWidth="800">
+    <Window.Resources>
+        <converter:DateConverter x:Key="DiscountConverter"/>
+        <Style TargetType="DataGridCell" x:Key="mainBorder">
+            <Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Start, Converter={StaticResource DiscountConverter}}">
+                    <DataTrigger.Value>true</DataTrigger.Value>
+                    <Setter Property="Background" Value="red"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Назад" Name="backButton" Click="backButton_Click" Grid.Column="0"/>
+        <Button Content="Добавить запись" Name="addButton" Click="addButton_Click" Grid.Column="1"/>
+        <DataGrid Grid.Row="1" Name="serviceList" Grid.ColumnSpan="2">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Background" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Start, Converter={StaticResource DiscountConverter}}" Value="true">
+                            <Setter Property="Background" Value="Red"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
     </Grid>
 </Window>
