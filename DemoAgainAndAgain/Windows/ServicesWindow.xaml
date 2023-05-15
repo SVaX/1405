@@ -4,9 +4,106 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DemoAgainAndAgain.Windows"
+        xmlns:converter="clr-namespace:DemoAgainAndAgain.Models;assembly="
         mc:Ignorable="d"
-        Title="ServicesWindow" Height="450" Width="800">
+        Title="Услуги" MinHeight="450" MinWidth="800">
+    <Window.Resources>
+        <converter:CutOffConverter x:Key="DiscountConverter" Cutoff="1"/>
+        <Style TargetType="TextBlock" x:Key="saleBlock">
+            <Setter Property="TextDecorations" Value="None"/>
+            <Setter Property="Visibility" Value="Hidden"/>
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Discount, Converter={StaticResource DiscountConverter}}">
+                    <DataTrigger.Value>true</DataTrigger.Value>
+                    <Setter Property="TextDecorations" Value="Strikethrough"/>
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="Label" x:Key="sale">
+            <Setter Property="Visibility" Value="Hidden"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Discount, Converter={StaticResource DiscountConverter}}">
+                    <DataTrigger.Value>true</DataTrigger.Value>
+                    <Setter Property="Visibility" Value="Visible"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <BitmapImage x:Key="nullImage" UriSource="/Resources/school_logo.png"/>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Выйти" Name="backButton" Click="backButton_Click" Grid.Row="0" Grid.Column="0"/>
+
+        <TextBox Name="searchTextBox" TextChanged="searchTextBox_TextChanged" Grid.Row="0" Grid.Column="1"/>
+
+        <ComboBox Name="discoundFilter" SelectionChanged="discoundFilter_SelectionChanged" Grid.Row="0" Grid.Column="2"/>
+
+        <ComboBox Name="costSortComboBox" SelectionChanged="costSortComboBox_SelectionChanged" Grid.Row="0" Grid.Column="3"/>
+
+        <Button Name="addButton" Click="addButton_Click" Grid.Row="0" Grid.Column="4" Content="Добавить" Visibility="Hidden"/>
+
+        <Button Name="recordButton" Click="recordButton_Click" Grid.Row="0" Grid.Column="5" Content="Записи" Visibility="Hidden"/>
+
+        <Label Name="recordAmountLabel" />
+
+        <ListView Grid.ColumnSpan="6" Grid.Row="1" x:Name="servicesList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Border BorderBrush="Black" BorderThickness="1" Grid.Column="0" MaxHeight="125">
+                                <Image Source="{Binding Path=Photo, FallbackValue={StaticResource nullImage}}"/>
+                            </Border>
+
+                            <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="2*"/>
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Content="{Binding Name}"/>
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Cost}" Style="{StaticResource saleBlock}"/>
+                                        <Label Content="{Binding CostWithDiscount}"/>
+                                        <Label Content="Рублей за"/>
+                                        <Label Content="{Binding Duration}"/>
+                                        <Label Content="минут."/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                        <Label Content="Скидка" Style="{StaticResource sale}"/>
+                                        <Label HorizontalContentAlignment="Left"  Content="{Binding Discount}" Style="{StaticResource sale}"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

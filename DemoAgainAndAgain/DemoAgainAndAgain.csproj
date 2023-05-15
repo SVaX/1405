@@ -5,7 +5,46 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\school_logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\for company.jpg" />
+    <None Remove="Resources\forcompany.jpg" />
+    <None Remove="Resources\online lessons.jpg" />
+    <None Remove="Resources\onlinelessons.jpg" />
+    <None Remove="Resources\school_logo.ico" />
+    <None Remove="Resources\school_logo.png" />
+    <None Remove="Resources\Английский язык.jpg" />
+    <None Remove="Resources\Английскийязык.jpg" />
+    <None Remove="Resources\Испанский язык.jpg" />
+    <None Remove="Resources\Испанскийязык.jpg" />
+    <None Remove="Resources\Итальянский язык.jpg" />
+    <None Remove="Resources\Итальянскийязык.jpg" />
+    <None Remove="Resources\киноклуб.jpg" />
+    <None Remove="Resources\Китайский язык.jpg" />
+    <None Remove="Resources\Китайскийязык.jpg" />
+    <None Remove="Resources\Немецкий язык.png" />
+    <None Remove="Resources\Немецкийязык.png" />
+    <None Remove="Resources\Подготовка к экзамену ACT.png" />
+    <None Remove="Resources\Подготовка к экзамену GMAT.png" />
+    <None Remove="Resources\Подготовка к экзамену GRE.jpeg" />
+    <None Remove="Resources\Подготовка к экзамену IELTS.jpg" />
+    <None Remove="Resources\Подготовка к экзамену SAT.png" />
+    <None Remove="Resources\Подготовка к экзамену TOEFL.jpg" />
+    <None Remove="Resources\ПодготовкакэкзаменуACT.png" />
+    <None Remove="Resources\ПодготовкакэкзаменуGMAT.png" />
+    <None Remove="Resources\ПодготовкакэкзаменуGRE.jpeg" />
+    <None Remove="Resources\ПодготовкакэкзаменуIELTS.jpg" />
+    <None Remove="Resources\ПодготовкакэкзаменуSAT.png" />
+    <None Remove="Resources\ПодготовкакэкзаменуTOEFL.jpg" />
+    <None Remove="Resources\Португальский язык.jpg" />
+    <None Remove="Resources\Португальскийязык.jpg" />
+    <None Remove="Resources\Французский язык.jpg" />
+    <None Remove="Resources\Французскийязык.jpg" />
+    <None Remove="Resources\Японский язык.jpg" />
+    <None Remove="Resources\Японскийязык.jpg" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
@@ -16,7 +55,40 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <Resource Include="Resources\forcompany.jpg" />
+    <Resource Include="Resources\onlinelessons.jpg" />
+    <Resource Include="Resources\school_logo.ico" />
+    <Resource Include="Resources\school_logo.png" />
+    <Resource Include="Resources\Английскийязык.jpg" />
+    <Resource Include="Resources\Испанскийязык.jpg" />
+    <Resource Include="Resources\Итальянскийязык.jpg" />
+    <Resource Include="Resources\киноклуб.jpg" />
+    <Resource Include="Resources\Китайскийязык.jpg" />
+    <Resource Include="Resources\Немецкийязык.png" />
+    <Resource Include="Resources\ПодготовкакэкзаменуACT.png" />
+    <Resource Include="Resources\ПодготовкакэкзаменуGMAT.png" />
+    <Resource Include="Resources\ПодготовкакэкзаменуGRE.jpeg" />
+    <Resource Include="Resources\ПодготовкакэкзаменуIELTS.jpg" />
+    <Resource Include="Resources\ПодготовкакэкзаменуSAT.png" />
+    <Resource Include="Resources\ПодготовкакэкзаменуTOEFL.jpg" />
+    <Resource Include="Resources\Португальскийязык.jpg" />
+    <Resource Include="Resources\Французскийязык.jpg" />
+    <Resource Include="Resources\Японскийязык.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

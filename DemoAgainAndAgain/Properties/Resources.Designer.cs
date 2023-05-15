@@ -63,9 +63,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] for_company {
+        internal static byte[] forcompany {
             get {
-                object obj = ResourceManager.GetObject("for company", resourceCulture);
+                object obj = ResourceManager.GetObject("forcompany", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] online_lessons {
+        internal static byte[] onlinelessons {
             get {
-                object obj = ResourceManager.GetObject("online lessons", resourceCulture);
+                object obj = ResourceManager.GetObject("onlinelessons", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Английский_язык {
+        internal static byte[] Английскийязык {
             get {
-                object obj = ResourceManager.GetObject("Английский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Английскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Испанский_язык {
+        internal static byte[] Испанскийязык {
             get {
-                object obj = ResourceManager.GetObject("Испанский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Испанскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Итальянский_язык {
+        internal static byte[] Итальянскийязык {
             get {
-                object obj = ResourceManager.GetObject("Итальянский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Итальянскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Китайский_язык {
+        internal static byte[] Китайскийязык {
             get {
-                object obj = ResourceManager.GetObject("Китайский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Китайскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Немецкий_язык {
+        internal static byte[] Немецкийязык {
             get {
-                object obj = ResourceManager.GetObject("Немецкий язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Немецкийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_ACT {
+        internal static byte[] ПодготовкакэкзаменуACT {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену ACT", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуACT", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_GMAT {
+        internal static byte[] ПодготовкакэкзаменуGMAT {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену GMAT", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуGMAT", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_GRE {
+        internal static byte[] ПодготовкакэкзаменуGRE {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену GRE", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуGRE", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_IELTS {
+        internal static byte[] ПодготовкакэкзаменуIELTS {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену IELTS", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуIELTS", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_SAT {
+        internal static byte[] ПодготовкакэкзаменуSAT {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену SAT", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуSAT", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Подготовка_к_экзамену_TOEFL {
+        internal static byte[] ПодготовкакэкзаменуTOEFL {
             get {
-                object obj = ResourceManager.GetObject("Подготовка к экзамену TOEFL", resourceCulture);
+                object obj = ResourceManager.GetObject("ПодготовкакэкзаменуTOEFL", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Португальский_язык {
+        internal static byte[] Португальскийязык {
             get {
-                object obj = ResourceManager.GetObject("Португальский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Португальскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Французский_язык {
+        internal static byte[] Французскийязык {
             get {
-                object obj = ResourceManager.GetObject("Французский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Французскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace DemoAgainAndAgain.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
-        internal static byte[] Японский_язык {
+        internal static byte[] Японскийязык {
             get {
-                object obj = ResourceManager.GetObject("Японский язык", resourceCulture);
+                object obj = ResourceManager.GetObject("Японскийязык", resourceCulture);
                 return ((byte[])(obj));
             }
         }
