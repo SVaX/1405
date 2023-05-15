@@ -23,6 +23,15 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
+        <Style TargetType="Border" x:Key="mainBorder">
+            <Setter Property="Background" Value="White"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Discount, Converter={StaticResource DiscountConverter}}">
+                    <DataTrigger.Value>true</DataTrigger.Value>
+                    <Setter Property="Background" Value="#7fff00"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
         <Style TargetType="Label" x:Key="sale">
             <Setter Property="Visibility" Value="Hidden"/>
             <Style.Triggers>
@@ -60,12 +69,12 @@
 
         <Button Name="recordButton" Click="recordButton_Click" Grid.Row="0" Grid.Column="5" Content="Записи" Visibility="Hidden"/>
 
-        <Label Name="recordAmountLabel" />
+        <Label Name="recordAmountLabel" Grid.Row="2" Grid.Column="5"/>
 
-        <ListView Grid.ColumnSpan="6" Grid.Row="1" x:Name="servicesList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+        <ListView Grid.ColumnSpan="6" Grid.Row="1" x:Name="servicesList" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" SelectionChanged="servicesList_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1">
+                    <Border BorderBrush="Black" BorderThickness="1" Style="{StaticResource mainBorder}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="3*"/>
