@@ -23,7 +23,7 @@ namespace DemoAgainAndAgain.Windows
         public ClientServiceWindow()
         {
             InitializeComponent();
-            List<ClientService> services = db.ClientServices.Where(x => x.Start <= DateTime.Now.AddDays(1)).ToList();
+            List<ClientService> services = db.ClientServices.Where(x => x.Start >= DateTime.Now.AddDays(-1)).ToList();
             serviceList.Items.Clear();
             serviceList.ItemsSource = services;
         }

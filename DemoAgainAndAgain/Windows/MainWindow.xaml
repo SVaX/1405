@@ -18,6 +18,6 @@
         <Button Content="Я админ!" Grid.Row="1" Name="adminButton" Click="adminButton_Click"/>
         <Label Content="Код" Visibility="Hidden" Grid.Row="2" Name="codeLabel"/>
         <TextBox Name="codeTextBox" Grid.Row="3" Visibility="Hidden"/>
-        <Button Name="enterButton" Grid.Row="4" Visibility="Hidden" Click="enterButton_Click"/>
+        <Button Name="enterButton"  Content="Войти" Grid.Row="4" Visibility="Hidden" Click="enterButton_Click"/>
     </Grid>
 </Window>

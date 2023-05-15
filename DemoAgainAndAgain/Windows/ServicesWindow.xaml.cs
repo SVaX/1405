@@ -45,6 +45,7 @@ namespace DemoAgainAndAgain.Windows
 
             InitList();
             InitComboBoxes();
+            updateRecordAmount();
 
             if (_isAdmin)
             {
@@ -85,6 +86,7 @@ namespace DemoAgainAndAgain.Windows
         {
             var foundAgents = services.Where(x => x.Name.ToLower().Contains(searchTextBox.Text.ToLower())).ToList();
             servicesList.ItemsSource = foundAgents;
+            updateRecordAmount();
         }
 
         private void discoundFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -94,36 +96,42 @@ namespace DemoAgainAndAgain.Windows
                 case 0:
                     {
                         InitList();
+                        updateRecordAmount();
                         break;
                     }
                 case 1:
                     {
                         services = db.Services.Where(x => x.Discount >= 0 && x.Discount < 5).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
                 case 2:
                     {
                         services = db.Services.Where(x => x.Discount >= 5 && x.Discount < 15).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
                 case 3:
                     {
                         services = db.Services.Where(x => x.Discount >= 15 && x.Discount < 30).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
                 case 4:
                     {
                         services = db.Services.Where(x => x.Discount >= 30 && x.Discount < 70).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
                 case 5:
                     {
                         services = db.Services.Where(x => x.Discount >= 70 && x.Discount < 100).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
             }
@@ -139,12 +147,14 @@ namespace DemoAgainAndAgain.Windows
                     {
                         services = services.OrderBy(x => x.CostWithDiscount).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
                 case 1:
                     {
                         services = services.OrderByDescending(x => x.CostWithDiscount).ToList();
                         servicesList.ItemsSource = services;
+                        updateRecordAmount();
                         break;
                     }
             }
@@ -168,6 +178,11 @@ namespace DemoAgainAndAgain.Windows
                 window.Show();
                 this.Close();
             }
+        }
+
+        private void updateRecordAmount()
+        {
+            recordAmountLabel.Content = $"{servicesList.Items.Count} из {services.Count}";
         }
 
         private void servicesList_SelectionChanged(object sender, SelectionChangedEventArgs e)

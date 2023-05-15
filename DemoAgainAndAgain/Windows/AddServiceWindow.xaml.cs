@@ -58,6 +58,8 @@ namespace DemoAgainAndAgain.Windows
             imageSource.EndInit();
             Picture.Source = imageSource;
         }
+
+
         private void ImageButoon_Click(object sender, RoutedEventArgs e)
         {
             var ofd = new OpenFileDialog();
@@ -97,13 +99,22 @@ namespace DemoAgainAndAgain.Windows
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrEmpty(NameTextBox.Text))
                 MessageBox.Show("Введите название", "Ошибка");
+
             if (string.IsNullOrEmpty(DurationTextBox.Text))
                 MessageBox.Show("Введите длительность", "Ошибка");
+
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString(), "Ошибка");
                 return;
             }
+
+            if (Convert.ToInt32(DurationTextBox.Text) > 240)
+            {
+                MessageBox.Show("Нельзя делать услугу более 4 часов");
+                return;
+            }
+
             _currentService.Name = NameTextBox.Text;
             _currentService.Cost = Convert.ToDouble(CostTextBox.Text);
             _currentService.Duration = Convert.ToInt32(DurationTextBox.Text);
@@ -126,7 +137,7 @@ namespace DemoAgainAndAgain.Windows
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            var admin = new ServicesWindow();
+            var admin = new ServicesWindow(true);
             admin.Show();
             Close();
         }
